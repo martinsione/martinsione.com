@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 
 import seo from "@/lib/seo";
 import ThemeButton from "@/components/ThemeButton";
+import ProjectCard from "@/components/ProjectCard";
 import Avatar from "@/components/Avatar";
 
 function LinkIcon({
@@ -37,8 +38,8 @@ function LinkIcon({
 
 export default function Home() {
   return (
-    <div className="mt-8 sm:mt-24">
-      <div className="w-full space-y-8">
+    <div className="mt-8 w-full space-y-12 sm:mt-24">
+      <div className="space-y-6">
         <div className="flex justify-between">
           <div className="flex items-center space-x-4 md:space-x-8">
             <Avatar alt="Martin Sione" src="/img/avatar.jpg" />
@@ -69,6 +70,59 @@ export default function Home() {
           />
 
           <LinkIcon href="/resume" icon={FaFilePdf} label="Resume" />
+        </div>
+      </div>
+
+      <div className="space-y-6">
+        <h2 className="text-2xl font-bold md:text-3xl">Projects</h2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <ProjectCard
+            deploy="https://meli-fake.vercel.app/"
+            description="Fully functional mercadolibre clone that fetches data from its official API. It has a landing page, search page and product detail page."
+            github="https://github.com/martinsione/meli-clone"
+            src="/img/project/mercadolibre.png"
+            technologies={["React", "NextJS", "Typescript", "Chakra-ui"]}
+            title="MercadoLibre Clone"
+          />
+          <ProjectCard
+            deploy="https://videogames.martinsione.com"
+            description="SPA to show videogames information consuming and external API and also with the possibility of creating your own games and saving them to a database"
+            github="https://github.com/martinsione/videogames"
+            src="/img/project/videogames.png"
+            technologies={[
+              "React",
+              "Redux",
+              "TypeScript",
+              "Express",
+              "NodeJS",
+              "PostgreSQL",
+            ]}
+            title="Videogames App"
+          />
+
+          <ProjectCard
+            deploy="https://coffeestore.vercel.app/"
+            description="It is built with React, TailwindCSS and firebase. The data is fetched from firestore."
+            github="https://github.com/martinsione/coffeestore"
+            src="/img/project/coffeestore.png"
+            technologies={["React", "TailwindCSS", "Firebase", "Context API"]}
+            title="Coffee ecommerce"
+          />
+
+          <ProjectCard
+            deploy="https://martinsione-amazon.vercel.app/"
+            description="This is a frontend clone of Amazon, built with react and firebase. It has full email auth implementation."
+            github="https://github.com/martinsione/amazon-clone"
+            src="/img/project/amazon.png"
+            technologies={[
+              "React",
+              "Firebase",
+              "Context API",
+              "OAuth",
+              "NodeJS",
+            ]}
+            title="Amazon Clone"
+          />
         </div>
       </div>
     </div>
