@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable import/no-extraneous-dependencies */
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
@@ -11,5 +12,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
