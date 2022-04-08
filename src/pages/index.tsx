@@ -2,6 +2,7 @@ import type { IconType } from "react-icons";
 
 import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 
+import seo from "@/lib/seo";
 import ThemeButton from "@/components/ThemeButton";
 import Avatar from "@/components/Avatar";
 
@@ -53,11 +54,7 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="prose dark:text-neutral-300">
-          I&apos;m an analitic and introvert person willing to learn something
-          new everyday. I believe in respect and good communication between
-          teams.
-        </p>
+        <p className="prose dark:text-neutral-300">{seo.description}</p>
         <div className="flex items-center space-x-10 leading-none">
           <LinkIcon
             href="https://github.com/martinsione"
