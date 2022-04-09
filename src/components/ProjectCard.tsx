@@ -1,4 +1,5 @@
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useState } from "react";
 import Image from "next/image";
 
 interface Props {
@@ -16,6 +17,8 @@ export default function Card({
   title,
   technologies,
 }: Props) {
+  const [isLoading, setLoading] = useState(true);
+
   return (
     <div className="group relative flex select-none flex-col overflow-hidden rounded-xl shadow-md">
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-black/70 px-3 opacity-0 transition-all duration-300 ease-in hover:opacity-100">
@@ -56,11 +59,18 @@ export default function Card({
       </div>
       <Image
         alt={title}
-        className="transition-all duration-300 ease-in group-hover:blur-sm"
+        className={`transition-all duration-700 ease-in-out group-hover:blur-sm ${
+          isLoading
+            ? "scale-110 blur-2xl grayscale"
+            : "scale-100 blur-0 grayscale-0"
+        }`}
         draggable="false"
         height={333}
+        loading="lazy"
+        quality={100}
         src={src}
         width={592}
+        onLoadingComplete={() => setLoading(false)}
       />
     </div>
   );
