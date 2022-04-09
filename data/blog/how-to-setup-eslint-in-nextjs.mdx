@@ -6,7 +6,7 @@ date: "2022-05-04"
 
 Having a linter can enforce a more consistent code style and help you discover errors faster, but the process of setting up one can be tedius. By the end of this post you are going to have a fully functional and opinionated eslint config working in your Next.js project.
 
-### Setting up eslint
+## Setting up eslint
 
 I assume you already have a Next.js proyect working if not you can [create one](https://nextjs.org/docs/api-reference/create-next-app).
 
@@ -18,7 +18,7 @@ npm install --save-dev eslint eslint-config-airbnb eslint-config-next eslint-plu
 
 2. Now go to your `.eslintrc.json` and add this lines
 
-```bash
+```bash:.eslintrc
 {
   "extends": [ "airbnb", "plugin:@next/next/recommended" ],
   "rules": {
@@ -41,12 +41,12 @@ npm install --save-dev eslint eslint-config-airbnb eslint-config-next eslint-plu
 4. This step is optional, in case you want to also have typescript support you will need to also install the following packages
 
 ```bash
-  eslint-config-airbnb-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm install --save-dev eslint-config-airbnb-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 And add this to your `.eslintrc.json`
 
-```bash
+```bash:.eslintrc
   "extends": [ "airbnb", "airbnb-typescript", "plugin:@next/next/recommended" ],
   "parser": "@typescript-eslint/parser",
   "overrides": [
@@ -59,7 +59,7 @@ And add this to your `.eslintrc.json`
   ],
 ```
 
-### Conclusion
+## Conclusion
 
 Congratulations, you now have a fully working eslint config!. If you’d like to learn more about eslint you can take a look at some of this resources:
 
