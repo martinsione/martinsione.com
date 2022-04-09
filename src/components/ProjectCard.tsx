@@ -58,9 +58,9 @@ export default function Card({
         alt={title}
         className="transition-all duration-300 ease-in group-hover:blur-sm"
         draggable="false"
-        height={360}
+        height={333}
         src={src}
-        width={640}
+        width={592}
       />
     </div>
   );
