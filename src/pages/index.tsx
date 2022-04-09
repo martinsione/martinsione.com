@@ -1,10 +1,14 @@
 import type { IconType } from "react-icons";
 
 import { FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
+import { InferGetStaticPropsType } from "next";
+import { pick } from "contentlayer/client";
 
+import { allPosts } from "contentlayer/generated";
 import seo from "@/lib/seo";
 import ThemeButton from "@/components/ThemeButton";
 import ProjectCard from "@/components/ProjectCard";
+import BlogPost from "@/components/BlogPost";
 import Avatar from "@/components/Avatar";
 
 function LinkIcon({
@@ -36,7 +40,9 @@ function LinkIcon({
   );
 }
 
-export default function Home() {
+export default function Home({
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="mt-8 w-full space-y-12 sm:mt-28 md:space-y-20">
       <div className="space-y-6">
@@ -129,6 +135,23 @@ export default function Home() {
           />
         </div>
       </div>
+
+      <div className="space-y-6">
+        <h2 className="text-2xl font-bold md:text-3xl">Blog</h2>
+        <div className="space-y-8">
+          {posts.map((post) => (
+            <BlogPost key={post.title} {...post} />
+          ))}
+        </div>
+      </div>
     </div>
   );
+}
+
+export function getStaticProps() {
+  const posts = allPosts
+    .map((post) => pick(post, ["slug", "title", "summary", "date"]))
+    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
+
+  return { props: { posts } };
 }

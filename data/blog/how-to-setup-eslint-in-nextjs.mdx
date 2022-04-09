@@ -1,0 +1,67 @@
+---
+title: "Setup airbnb eslint config in Next.js"
+summary: "Setup airbnb eslint config in Next.js"
+date: "2022-05-04"
+---
+
+Having a linter can enforce a more consistent code style and help you discover errors faster, but the process of setting up one can be tedius. By the end of this post you are going to have a fully functional and opinionated eslint config working in your Next.js project.
+
+### Setting up eslint
+
+I assume you already have a Next.js proyect working if not you can [create one](https://nextjs.org/docs/api-reference/create-next-app).
+
+1. Download airbn config with its dependencies by running the following command
+
+```bash
+npm install --save-dev eslint eslint-config-airbnb eslint-config-next eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
+```
+
+2. Now go to your `.eslintrc.json` and add this lines
+
+```bash
+{
+  "extends": [ "airbnb", "plugin:@next/next/recommended" ],
+  "rules": {
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+  }
+}
+```
+
+> NOTE: Rule for `jsx-a11y/anchor-is-valid` needs to be added in order to avoid errors because of how Next.js handles links
+
+3. Now you will extend airbnb eslint config and still have warnings from Next.js config such as use Image component instead of a regular img tag.
+
+4. This step is optional, in case you want to also have typescript support you will need to also install the following packages
+
+```bash
+  eslint-config-airbnb-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
+```
+
+And add this to your `.eslintrc.json`
+
+```bash
+  "extends": [ "airbnb", "airbnb-typescript", "plugin:@next/next/recommended" ],
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      }
+    }
+  ],
+```
+
+### Conclusion
+
+Congratulations, you now have a fully working eslint config!. If you’d like to learn more about eslint you can take a look at some of this resources:
+
+- https://nextjs.org/docs/basic-features/eslint
+- https://eslint.org/
