@@ -39,14 +39,18 @@ export default function Post({ post }: { post: IPost }) {
         </h1>
         <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
           <div className="flex items-center">
-            <Image
-              alt="Martin Sione"
-              className="rounded-full"
-              draggable="false"
-              height={24}
-              src="/img/avatar.jpg"
-              width={24}
-            />
+            <Link href="/">
+              <a className="flex items-center transition-all duration-300 ease-in-out hover:scale-110 active:scale-100">
+                <Image
+                  alt="Martin Sione"
+                  className="rounded-full"
+                  draggable="false"
+                  height={24}
+                  src="/img/avatar.jpg"
+                  width={24}
+                />
+              </a>
+            </Link>
             <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
               {"Martin Sione / "}
               {format(parseISO(post.date), "MMMM dd, yyyy")}
