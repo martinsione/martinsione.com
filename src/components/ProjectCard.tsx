@@ -20,8 +20,22 @@ export default function Card({
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div className="group relative flex select-none flex-col overflow-hidden rounded-xl shadow-md">
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-black/70 px-3 opacity-0 transition-all duration-300 ease-in hover:opacity-100">
+    <div className="sm:group relative flex select-none flex-col overflow-hidden rounded-xl shadow-md">
+      <Image
+        alt={title}
+        className={`transition-all duration-700 ease-in-out group-hover:blur-sm ${
+          isLoading
+            ? "scale-110 blur-2xl grayscale"
+            : "scale-100 blur-0 grayscale-0"
+        }`}
+        draggable="false"
+        height={333}
+        loading="lazy"
+        src={src}
+        width={592}
+        onLoadingComplete={() => setLoading(false)}
+      />
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-black/70 px-3 transition-all duration-300 ease-in sm:opacity-0 sm:hover:opacity-100">
         <div className="flex flex-col items-center gap-2">
           <h3 className="text-xl font-bold text-white">{title}</h3>
           <div className="flex flex-wrap justify-center gap-1">
@@ -60,20 +74,6 @@ export default function Card({
           </a>
         </div>
       </div>
-      <Image
-        alt={title}
-        className={`transition-all duration-700 ease-in-out group-hover:blur-sm ${
-          isLoading
-            ? "scale-110 blur-2xl grayscale"
-            : "scale-100 blur-0 grayscale-0"
-        }`}
-        draggable="false"
-        height={333}
-        loading="lazy"
-        src={src}
-        width={592}
-        onLoadingComplete={() => setLoading(false)}
-      />
     </div>
   );
 }
