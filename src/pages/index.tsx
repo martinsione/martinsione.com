@@ -88,6 +88,15 @@ export default function Home({
       </div>
 
       <div className="space-y-6">
+        <h2 className="text-2xl font-bold md:text-3xl">Blog</h2>
+        <div className="space-y-8">
+          {posts.slice(0, 1).map((post) => (
+            <BlogPost key={post.title} {...post} />
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-6">
         <h2 className="text-2xl font-bold md:text-3xl">Projects</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:-mx-12">
           <ProjectCard
@@ -133,15 +142,6 @@ export default function Home({
             ]}
             title="Amazon Clone"
           />
-        </div>
-      </div>
-
-      <div className="space-y-6">
-        <h2 className="text-2xl font-bold md:text-3xl">Blog</h2>
-        <div className="space-y-8">
-          {posts.map((post) => (
-            <BlogPost key={post.title} {...post} />
-          ))}
         </div>
       </div>
     </div>
