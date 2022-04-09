@@ -1,0 +1,56 @@
+---
+title: Reduce Next.js app bundle size by ~40%
+summary: Reduce your Next.js app in half by replacing react with preact on build time
+date: 2022-04-09
+---
+
+Hopefully by the end of this post you should have reduced your app size. Note that this isn't for everybody, your app may use advanced react features which are not compatible with preact, if you want to learn more about please [read this](https://preactjs.com/guide/v10/differences-to-react/).
+
+## Before vs After
+
+> Initial javascript load measured in kb
+
+<Image
+  height={200}
+  width={820}
+  src="/img/blog/reduce-nextjs-app-bundle-size/before-and-after.png"
+/>
+
+## Let's get started
+
+First you are going to need to install preact:
+
+```bash
+npm install preact
+```
+
+After you have installed go to `next.config.js` and add this:
+
+```js {4-16}:next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  webpack: (config, { dev, isServer }) => {
+    // Replace React with Preact only in client production build
+    if (!dev && !isServer) {
+      Object.assign(config.resolve.alias, {
+        "react/jsx-runtime.js": "preact/compat/jsx-runtime",
+        react: "preact/compat",
+        "react-dom/test-utils": "preact/test-utils",
+        "react-dom": "preact/compat",
+      });
+    }
+
+    return config;
+  },
+};
+
+module.exports = nextConfig;
+```
+
+Now you should be able to run `npm run build` and see how your app bundle size has decreased
+
+## Resources
+
+- https://preactjs.com/guide/v8/switching-to-preact/
+- https://github.com/leerob/leerob.io/blob/main/next.config.js

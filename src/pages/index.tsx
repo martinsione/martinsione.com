@@ -90,7 +90,7 @@ export default function Home({
       <div className="space-y-6">
         <h2 className="text-2xl font-bold md:text-3xl">Blog</h2>
         <div className="space-y-8">
-          {posts.slice(0, 1).map((post) => (
+          {posts.map((post) => (
             <BlogPost key={post.title} {...post} />
           ))}
         </div>
