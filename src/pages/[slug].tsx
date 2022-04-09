@@ -23,7 +23,7 @@ export default function Post({ post }: { post: IPost }) {
         description={post.summary}
         title={`${post.title} - Martin Sione`}
       />
-      <div className="mt-12 flex items-center justify-between">
+      <div className="flex items-center justify-between sm:mt-12">
         <Link href="/">
           <a className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 text-2xl transition-all hover:ring-2 hover:ring-pink-300 dark:bg-neutral-700">
             <IoArrowBack />
