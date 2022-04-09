@@ -20,10 +20,10 @@ export default function Card({
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div className="sm:group relative flex select-none flex-col overflow-hidden rounded-xl shadow-md">
+    <div className="group relative flex select-none flex-col overflow-hidden rounded-xl shadow-md">
       <Image
         alt={title}
-        className={`transition-all duration-700 ease-in-out group-hover:blur-sm ${
+        className={`transition-all duration-700 ease-in-out sm:group-hover:blur-sm ${
           isLoading
             ? "scale-110 blur-2xl grayscale"
             : "scale-100 blur-0 grayscale-0"
