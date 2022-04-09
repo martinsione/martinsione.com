@@ -70,7 +70,6 @@ export default function Card({
         draggable="false"
         height={333}
         loading="lazy"
-        quality={100}
         src={src}
         width={592}
         onLoadingComplete={() => setLoading(false)}
