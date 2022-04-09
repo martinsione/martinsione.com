@@ -3,11 +3,13 @@ import type { Post as IPost } from "contentlayer/generated";
 import { IoArrowBack } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
+import { NextSeo } from "next-seo";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { parseISO, format } from "date-fns";
 
 import { allPosts } from "contentlayer/generated";
+import seo from "@/lib/seo";
 import ThemeButton from "@/components/ThemeButton";
 import components from "@/components/MDXComponents";
 
@@ -15,6 +17,12 @@ export default function Post({ post }: { post: IPost }) {
   const Component = useMDXComponent(post.body.code);
   return (
     <>
+      <NextSeo
+        {...seo}
+        canonical={`https://martinsione.com/${post.slug}`}
+        description={post.summary}
+        title={`${post.title} - Martin Sione`}
+      />
       <div className="mt-12 flex items-center justify-between">
         <Link href="/">
           <a className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 text-2xl transition-all hover:ring-2 hover:ring-pink-300 dark:bg-neutral-700">
