@@ -38,18 +38,6 @@ export default function Card({
         <div className="flex gap-2">
           <a
             className="focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70"
-            href={github}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <div className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 active:scale-100">
-              <FaGithub className="h-4 w-4" />
-              <div className="text-sm">Code</div>
-            </div>
-          </a>
-
-          <a
-            className="focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70"
             href={deploy}
             rel="noopener noreferrer"
             target="_blank"
@@ -57,6 +45,17 @@ export default function Card({
             <div className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 active:scale-100">
               <FaExternalLinkAlt className="h-4 w-4" />
               <div className="text-sm">Deploy</div>
+            </div>
+          </a>
+          <a
+            className="focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70"
+            href={github}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <div className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 active:scale-100">
+              <FaGithub className="h-4 w-4" />
+              <div className="text-sm">Code</div>
             </div>
           </a>
         </div>
