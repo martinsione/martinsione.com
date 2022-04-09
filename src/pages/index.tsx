@@ -38,24 +38,32 @@ function LinkIcon({
 
 export default function Home() {
   return (
-    <div className="mt-8 w-full space-y-12 sm:mt-24">
+    <div className="mt-8 w-full space-y-12 sm:mt-28 md:space-y-20">
       <div className="space-y-6">
-        <div className="flex justify-between">
-          <div className="flex items-center space-x-4 md:space-x-8">
-            <Avatar alt="Martin Sione" src="/img/avatar.jpg" />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-x-4 md:flex-row-reverse md:items-center md:gap-x-8">
+            <div className="relative">
+              <div className="absolute right-0 z-10">
+                <ThemeButton />
+              </div>
+
+              <Avatar alt="Martin Sione" src="/img/avatar.jpg" />
+            </div>
 
             <div className="space-y-2">
               <h1 className="text-3xl font-bold md:text-5xl">Martin Sione</h1>
               <p className="md:text-xl">Frontend developer</p>
+
+              <p className="prose hidden text-sm dark:text-neutral-300 sm:block md:text-base">
+                {seo.description}
+              </p>
             </div>
           </div>
-
-          <div className="hidden sm:flex sm:self-start sm:justify-self-end">
-            <ThemeButton />
-          </div>
         </div>
+        <p className="prose dark:text-neutral-300 sm:hidden">
+          {seo.description}
+        </p>
 
-        <p className="prose dark:text-neutral-300">{seo.description}</p>
         <div className="flex items-center space-x-10 leading-none">
           <LinkIcon
             href="https://github.com/martinsione"

@@ -9,13 +9,13 @@ export default function ThemeButton() {
   return (
     <button
       aria-label="Toggle Dark Mode"
-      className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-300 ring-gray-300 transition-all hover:ring-2 dark:bg-neutral-800"
+      className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tl from-purple-600 to-rose-400 transition-all hover:ring-2 hover:ring-pink-300"
       type="button"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {mounted && (
         <svg
-          className="h-5 w-5 text-black dark:text-white"
+          className="h-5 w-5 text-white"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

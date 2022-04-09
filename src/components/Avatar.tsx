@@ -6,7 +6,7 @@ interface Props {
 }
 export default function Avatar({ alt, src }: Props) {
   return (
-    <div className="h-[96px] w-[96px] select-none rounded-full bg-gradient-to-tl from-purple-700/60 to-rose-400/60 p-1 shadow-lg sm:h-[128px] sm:w-[128px]">
+    <div className="h-[96px] w-[96px] select-none rounded-full bg-gradient-to-tl from-purple-700/60 to-rose-400/60 p-1 shadow-lg sm:h-[160px] sm:w-[160px]">
       <Image
         priority
         alt={alt}
