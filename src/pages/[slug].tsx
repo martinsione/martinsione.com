@@ -11,7 +11,7 @@ import { parseISO, format } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import seo from "@/lib/seo";
 import ThemeButton from "@/components/ThemeButton";
-import components from "@/components/MDXComponents";
+import MDXComponents from "@/components/MDXComponents";
 
 export default function Post({ post }: { post: IPost }) {
   const Component = useMDXComponent(post.body.code);
@@ -57,7 +57,7 @@ export default function Post({ post }: { post: IPost }) {
           </p>
         </div>
         <div className="prose mt-4 w-full max-w-none dark:prose-dark">
-          <Component components={components} />
+          <Component components={MDXComponents} />
         </div>
       </article>
     </>

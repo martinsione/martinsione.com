@@ -20,7 +20,7 @@ function CustomLink({
   }
 
   return (
-    <a rel="noopener noreferrer" target="_blank" {...props}>
+    <a href={href} rel="noopener noreferrer" target="_blank" {...props}>
       {children}
     </a>
   );
@@ -28,7 +28,9 @@ function CustomLink({
 
 function RoundedImage({ alt, src, ...props }: { alt: string; src: string }) {
   return (
-    <Image alt={alt} className="rounded-lg lg:-mx-12" src={src} {...props} />
+    <div>
+      <Image alt={alt} className="hidden" src={src} {...props} />
+    </div>
   );
 }
 
