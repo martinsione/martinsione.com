@@ -26,7 +26,7 @@ export default function Card({
         className={`transition-all duration-700 ease-in-out sm:group-hover:blur-sm ${
           isLoading
             ? "scale-110 blur-2xl grayscale"
-            : "scale-100 blur-0 grayscale-0"
+            : "scale-100 blur-[2px] grayscale-0 sm:blur-none "
         }`}
         draggable="false"
         height={333}
@@ -35,7 +35,7 @@ export default function Card({
         width={592}
         onLoadingComplete={() => setLoading(false)}
       />
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-black/70 px-3 transition-all duration-300 ease-in sm:opacity-0 sm:hover:opacity-100">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-black/70 px-3 transition-all duration-300 ease-in-out sm:opacity-0 sm:hover:opacity-100">
         <div className="flex flex-col items-center gap-2">
           <h3 className="text-xl font-bold text-white">{title}</h3>
           <div className="flex flex-wrap justify-center gap-1">
@@ -51,26 +51,22 @@ export default function Card({
         </div>
         <div className="flex gap-2">
           <a
-            className="focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70"
+            className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 active:scale-100"
             href={deploy}
             rel="noopener noreferrer"
             target="_blank"
           >
-            <div className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 active:scale-100">
-              <FaExternalLinkAlt className="h-4 w-4" />
-              <div className="text-sm">Deploy</div>
-            </div>
+            <FaExternalLinkAlt className="h-4 w-4" />
+            <div className="text-sm">Deploy</div>
           </a>
           <a
-            className="focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70"
+            className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 active:scale-100"
             href={github}
             rel="noopener noreferrer"
             target="_blank"
           >
-            <div className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 active:scale-100">
-              <FaGithub className="h-4 w-4" />
-              <div className="text-sm">Code</div>
-            </div>
+            <FaGithub className="h-4 w-4" />
+            <div className="text-sm">Code</div>
           </a>
         </div>
       </div>
