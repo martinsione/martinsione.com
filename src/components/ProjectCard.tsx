@@ -51,7 +51,7 @@ export default function Card({
         </div>
         <div className="flex gap-2">
           <a
-            className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 active:scale-100"
+            className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 active:scale-100"
             href={deploy}
             rel="noopener noreferrer"
             target="_blank"
@@ -60,7 +60,7 @@ export default function Card({
             <div className="text-sm">Deploy</div>
           </a>
           <a
-            className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 active:scale-100"
+            className="flex items-center gap-2 rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 px-2 py-1 font-medium text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 active:scale-100"
             href={github}
             rel="noopener noreferrer"
             target="_blank"

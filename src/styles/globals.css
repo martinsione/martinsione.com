@@ -13,6 +13,10 @@
     U+FEFF, U+FFFD;
 }
 
+* {
+  @apply focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-500;
+}
+
 html {
   scroll-behavior: smooth;
 }

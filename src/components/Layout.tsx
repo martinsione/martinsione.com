@@ -11,7 +11,7 @@ function FooterLink({
 }) {
   return (
     <a
-      className="hover:text-rose-300 hover:underline hover:decoration-rose-300/30 hover:underline-offset-2 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 dark:hover:text-rose-200/90"
+      className="hover:text-rose-300 hover:underline hover:decoration-rose-300/30 hover:underline-offset-2 dark:hover:text-rose-200/90"
       href={href}
       rel="noopener noreferrer"
       target="_blank"

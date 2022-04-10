@@ -23,19 +23,17 @@ function LinkIcon({
   const Icon = icon;
   return (
     <a
-      className="group rounded-lg focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/70 sm:flex sm:items-center sm:space-x-2"
+      className="group flex flex-col items-center gap-1 sm:flex-row sm:gap-2"
       href={href}
       rel="noopener noreferrer"
       target="_blank"
     >
-      <div className="mb-1.5 flex items-center justify-center sm:mb-0 sm:block">
-        <div className="rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 p-1 transition-all duration-300 ease-out hover:scale-110 active:scale-100 group-hover:shadow-lg group-hover:shadow-purple-500/50">
-          <Icon className="h-6 w-6 transform text-white transition delay-100 duration-500 ease-out hover:scale-110 sm:h-5 sm:w-5" />
-        </div>
+      <div className="rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 p-1 text-white transition-all duration-300 ease-out group-hover:shadow-lg group-hover:shadow-purple-500/50 sm:hover:scale-110 sm:active:scale-100">
+        <Icon className="h-6 w-6 sm:h-5 sm:w-5" />
       </div>
-      <div className="sm:text-md text-sm group-hover:underline group-hover:underline-offset-1">
+      <p className="sm:text-md text-sm group-hover:underline group-hover:underline-offset-1">
         {label}
-      </div>
+      </p>
     </a>
   );
 }
