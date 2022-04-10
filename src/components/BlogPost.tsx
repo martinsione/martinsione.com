@@ -11,9 +11,9 @@ export default function BlogPost({
 }: Pick<IPost, "title" | "summary" | "slug" | "date">) {
   return (
     <div className="flex flex-col items-start  space-y-2 sm:flex-row sm:space-y-0">
-      <div className="relative sm:mr-52">
+      <div className="relative sm:mr-40">
         <p className="whitespace-nowrap text-zinc-400 sm:absolute">
-          {format(parseISO(date), "MMMM dd, yyyy")}
+          {format(parseISO(date), "MMM dd, yyyy")}
         </p>
       </div>
 

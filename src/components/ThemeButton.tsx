@@ -9,7 +9,7 @@ export default function ThemeButton() {
   return (
     <button
       aria-label="Toggle Dark Mode"
-      className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tl from-pink-100 to-pink-300 text-white transition-all hover:ring-2 hover:ring-pink-300 dark:from-purple-600 dark:to-rose-400"
+      className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tl from-purple-600 to-rose-400 text-white transition-all hover:ring-2 hover:ring-pink-300"
       type="button"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >

@@ -55,8 +55,10 @@ export default function Home({
             </div>
 
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold md:text-5xl">Martin Sione</h1>
-              <p className="md:text-xl">Frontend developer</p>
+              <h1 className="text-3xl font-bold tracking-tight md:text-5xl">
+                Martin Sione
+              </h1>
+              <p className="font-medium md:text-lg">Frontend developer</p>
 
               <p className="prose hidden text-sm dark:text-neutral-300 sm:block md:text-base">
                 {seo.description}
@@ -86,7 +88,7 @@ export default function Home({
       </div>
 
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold md:text-3xl">Blog</h2>
+        <h2 className="text-2xl font-bold tracking-tight md:text-4xl">Blog</h2>
         <div className="space-y-8">
           {posts.map((post) => (
             <BlogPost key={post.title} {...post} />
@@ -95,7 +97,9 @@ export default function Home({
       </div>
 
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold md:text-3xl">Projects</h2>
+        <h2 className="text-2xl font-bold tracking-tight md:text-4xl">
+          Projects
+        </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <ProjectCard
             deploy="https://meli-fake.vercel.app/"
