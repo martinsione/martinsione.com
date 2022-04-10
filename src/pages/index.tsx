@@ -98,7 +98,7 @@ export default function Home({
 
       <div className="space-y-6">
         <h2 className="text-2xl font-bold md:text-3xl">Projects</h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:-mx-12">
+        <div className="grid gap-4 sm:grid-cols-2">
           <ProjectCard
             deploy="https://meli-fake.vercel.app/"
             github="https://github.com/martinsione/meli-clone"
