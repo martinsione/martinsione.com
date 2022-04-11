@@ -45,7 +45,7 @@ export default function Home({
     <div className="mt-8 w-full space-y-12 sm:mt-28 md:space-y-20">
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-x-4 md:flex-row-reverse md:items-center md:gap-x-8">
+          <div className="flex items-center gap-x-4 sm:flex-row-reverse sm:items-center sm:gap-x-8">
             <div className="relative">
               <div className="absolute right-0 z-10">
                 <ThemeButton />
@@ -60,15 +60,13 @@ export default function Home({
               </h1>
               <p className="font-medium md:text-lg">Frontend developer</p>
 
-              <p className="prose hidden text-sm dark:text-neutral-300 sm:block md:text-base">
+              <p className="prose hidden text-sm dark:text-gray-300 sm:block md:text-base">
                 {seo.description}
               </p>
             </div>
           </div>
         </div>
-        <p className="prose dark:text-neutral-300 sm:hidden">
-          {seo.description}
-        </p>
+        <p className="prose dark:text-gray-300 sm:hidden">{seo.description}</p>
 
         <div className="flex items-center space-x-10 leading-none">
           <LinkIcon
