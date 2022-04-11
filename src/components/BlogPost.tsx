@@ -10,19 +10,16 @@ export default function BlogPost({
   date,
 }: Pick<IPost, "title" | "summary" | "slug" | "date">) {
   return (
-    <div className="flex flex-col items-start  space-y-2 sm:flex-row sm:space-y-0">
-      <div className="relative sm:mr-40">
-        <p className="whitespace-nowrap text-zinc-400 sm:absolute">
-          {format(parseISO(date), "MMM dd, yyyy")}
-        </p>
-      </div>
-
+    <div className="flex flex-col space-y-1">
+      <p className="text-sm text-gray-500 dark:text-gray-400">
+        {format(parseISO(date), "MMMM dd, yyyy")}
+      </p>
       <Link href={`/${slug}`}>
-        <a className="hover:opacity-80">
-          <h4 className="w-full text-xl font-medium text-gray-900 dark:text-gray-100 md:text-xl">
+        <a>
+          <h4 className="w-full font-medium text-gray-900 dark:text-gray-100 md:text-lg">
             {title}
           </h4>
-          <p className="text-lg text-gray-600 dark:text-gray-400">{summary}</p>
+          <p className="text-gray-600 dark:text-gray-300">{summary}</p>
         </a>
       </Link>
     </div>
