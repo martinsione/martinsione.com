@@ -12,9 +12,9 @@ export default function Avatar({ alt, src }: Props) {
         alt={alt}
         className="rounded-full"
         draggable="false"
-        height={150}
+        height={128}
         src={src}
-        width={150}
+        width={128}
       />
     </div>
   );

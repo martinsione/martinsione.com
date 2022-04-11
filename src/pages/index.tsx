@@ -45,7 +45,7 @@ export default function Home({
     <div className="mt-8 w-full space-y-12 sm:mt-28 md:space-y-20">
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-x-4 sm:flex-row-reverse sm:items-center sm:gap-x-8">
+          <div className="flex w-full items-center gap-x-4 sm:flex-row-reverse sm:items-center sm:justify-between">
             <div className="relative">
               <div className="absolute right-0 z-10">
                 <ThemeButton />
@@ -54,12 +54,14 @@ export default function Home({
               <Avatar alt="Martin Sione" src="/img/avatar.jpg" />
             </div>
 
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tight md:text-5xl">
+            <div>
+              <h1 className="mb-1 text-3xl font-bold tracking-tight md:text-5xl">
                 Martin Sione
               </h1>
-              <p className="font-medium md:text-lg">Frontend developer</p>
-
+              <h2 className="mb-4 text-gray-700 dark:text-gray-200">
+                Frontend developer based in{" "}
+                <strong className="font-medium">Parana, Argentina</strong>
+              </h2>
               <p className="prose hidden text-sm dark:text-gray-300 sm:block md:text-base">
                 {seo.description}
               </p>
@@ -86,7 +88,7 @@ export default function Home({
       </div>
 
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold tracking-tight md:text-4xl">Blog</h2>
+        <h3 className="text-2xl font-bold tracking-tight md:text-4xl">Blog</h3>
         <div className="space-y-8">
           {posts.map((post) => (
             <BlogPost key={post.title} {...post} />
@@ -95,9 +97,9 @@ export default function Home({
       </div>
 
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold tracking-tight md:text-4xl">
+        <h3 className="text-2xl font-bold tracking-tight md:text-4xl">
           Projects
-        </h2>
+        </h3>
         <div className="grid gap-4 sm:grid-cols-2">
           <ProjectCard
             deploy="https://meli-fake.vercel.app/"
