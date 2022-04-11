@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -27,9 +28,21 @@ function CustomLink({
 }
 
 function RoundedImage({ alt, src, ...props }: { alt: string; src: string }) {
+  const [isLoading, setLoading] = useState(true);
   return (
     <div>
-      <Image alt={alt} className="hidden" src={src} {...props} />
+      <Image
+        alt={alt}
+        className={`transition-all duration-700 ease-in-out sm:group-hover:blur-sm ${
+          isLoading
+            ? "scale-110 blur-2xl grayscale"
+            : "scale-100 blur-[2px] grayscale-0 sm:blur-none "
+        }`}
+        loading="lazy"
+        src={src}
+        onLoadingComplete={() => setLoading(false)}
+        {...props}
+      />
     </div>
   );
 }
