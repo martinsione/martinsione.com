@@ -33,10 +33,8 @@ function RoundedImage({ alt, src, ...props }: { alt: string; src: string }) {
     <div>
       <Image
         alt={alt}
-        className={`transition-all duration-700 ease-in-out sm:group-hover:blur-sm ${
-          isLoading
-            ? "scale-110 blur-2xl grayscale"
-            : "scale-100 blur-[2px] grayscale-0 sm:blur-none "
+        className={`transition-all duration-700 ease-in-out ${
+          isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 grayscale-0"
         }`}
         loading="lazy"
         src={src}
