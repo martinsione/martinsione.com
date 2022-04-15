@@ -20,10 +20,10 @@ export default function Card({
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div className="group relative flex select-none flex-col overflow-hidden rounded-xl shadow-md">
+    <div className="group relative flex select-none flex-col overflow-hidden rounded-xl shadow-md ">
       <Image
         alt={title}
-        className={`transition-all duration-700 ease-in-out sm:group-hover:blur-sm ${
+        className={`transition-all duration-700 ease-in-out sm:group-focus-within:blur-sm sm:group-hover:blur-sm ${
           isLoading
             ? "scale-110 blur-2xl grayscale"
             : "scale-100 blur-[2px] grayscale-0 sm:blur-none "
@@ -35,7 +35,7 @@ export default function Card({
         width={592}
         onLoadingComplete={() => setLoading(false)}
       />
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-black/70 px-3 transition-all duration-300 ease-in-out sm:opacity-0 sm:hover:opacity-100">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-black/70 px-3 transition-all duration-300 ease-in-out group-focus-within:opacity-100 sm:opacity-0 sm:hover:opacity-100">
         <div className="flex flex-col items-center gap-2">
           <h3 className="text-xl font-bold text-white">{title}</h3>
           <div className="flex flex-wrap justify-center gap-1">
