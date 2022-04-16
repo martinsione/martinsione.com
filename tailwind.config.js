@@ -1,5 +1,6 @@
 /* eslint-disable global-require, import/no-extraneous-dependencies  */
 const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
@@ -10,18 +11,7 @@ module.exports = {
         sans: ["Inter", ...fontFamily.sans],
       },
       colors: {
-        gray: {
-          0: "#fff",
-          100: "#fafafa",
-          200: "#eaeaea",
-          300: "#999999",
-          400: "#888888",
-          500: "#666666",
-          600: "#444444",
-          700: "#333333",
-          800: "#222222",
-          900: "#111111",
-        },
+        gray: colors.neutral,
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -36,8 +26,8 @@ module.exports = {
                 color: theme("colors.blue.400"),
               },
             },
-            "h2,h3,h4": {
-              "scroll-margin-top": spacing[32],
+            "h1,h2,h3,h4": {
+              "scroll-margin-top": spacing[6],
             },
             thead: {
               borderBottomColor: theme("colors.gray.200"),
@@ -61,9 +51,9 @@ module.exports = {
               borderLeftColor: theme("colors.gray.700"),
               color: theme("colors.gray.300"),
             },
-            "h2,h3,h4": {
+            "h1,h2,h3,h4": {
               color: theme("colors.gray.100"),
-              "scroll-margin-top": spacing[32],
+              "scroll-margin-top": spacing[5],
             },
             hr: {
               borderColor: theme("colors.gray.700"),
@@ -96,9 +86,6 @@ module.exports = {
         },
       }),
     },
-  },
-  variants: {
-    typography: ["dark"],
   },
   plugins: [require("@tailwindcss/typography")],
 };

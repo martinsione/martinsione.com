@@ -39,7 +39,7 @@ html {
 }
 
 .prose .anchor:after {
-  @apply text-zinc-300 dark:text-zinc-700;
+  @apply text-gray-300 dark:text-gray-600;
   content: "#";
 }
 
@@ -48,15 +48,15 @@ html {
 }
 
 .prose pre {
-  @apply border border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-neutral-900;
+  @apply border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900;
 }
 
 .prose code {
-  @apply rounded-lg border border-neutral-200 px-1 py-0.5 text-zinc-800 dark:border-neutral-700 dark:text-gray-200;
+  @apply rounded-lg border border-gray-200 px-1 py-0.5 text-gray-800 dark:border-gray-700 dark:text-gray-200;
 }
 
 .prose pre code {
-  @apply border-none p-0 text-zinc-800 dark:text-zinc-200;
+  @apply border-none p-0 text-gray-800 dark:text-gray-200;
 }
 
 .prose img {
@@ -76,7 +76,7 @@ html {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  @apply text-zinc-800 dark:text-zinc-50;
+  @apply text-gray-800 dark:text-gray-50;
 }
 
 pre {
@@ -89,18 +89,18 @@ pre::-webkit-scrollbar {
 }
 
 pre::-webkit-scrollbar-thumb {
-  @apply bg-neutral-200 dark:bg-neutral-700;
+  @apply bg-gray-200 dark:bg-gray-700;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @apply text-zinc-700 dark:text-zinc-300;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .token.punctuation {
-  @apply text-zinc-700 dark:text-zinc-300;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .token.property,
@@ -148,7 +148,7 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .rehype-code-title {
-  @apply rounded-t-lg border border-b-0 border-zinc-200 bg-zinc-200 px-5 py-3 font-mono text-sm font-bold text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200;
+  @apply rounded-t-lg border border-b-0 border-gray-200 bg-gray-200 px-5 py-3 font-mono text-sm font-bold text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200;
 }
 
 .rehype-code-title + pre {
@@ -156,5 +156,5 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .highlight-line {
-  @apply -mx-4 block border-l-4 border-blue-500 bg-zinc-100 px-4 dark:bg-zinc-800;
+  @apply -mx-4 block border-l-4 border-blue-500 bg-gray-100 px-4 dark:bg-gray-800;
 }
