@@ -7,6 +7,7 @@ import seo from "@/lib/seo";
 import Layout from "@/components/Layout";
 
 import "../styles/globals.css";
+import "../styles/prism.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
