@@ -1,40 +1,19 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import NextLink from "next/link";
+import NextImage from "next/image";
 
-function CustomLink({
-  href,
-  children,
-  ...props
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
-
-  if (isInternalLink) {
-    return (
-      <Link href={href}>
-        <a {...props}>{children}</a>
-      </Link>
-    );
-  }
-
-  return (
-    <a href={href} rel="noopener noreferrer" target="_blank" {...props}>
-      {children}
-    </a>
-  );
-}
-
-function RoundedImage({ alt, src, ...props }: { alt: string; src: string }) {
+function Image({ alt, src, ...props }: { alt: string; src: string }) {
   const [isLoading, setLoading] = useState(true);
   return (
-    <div>
-      <Image
-        alt={alt}
-        className={`transition-all duration-700 ease-in-out ${
-          isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 grayscale-0"
+    <div className="flex overflow-hidden rounded-xl bg-white/[2%]">
+      <NextImage
+        alt={alt || ""}
+        {...props}
+        className={`duration-700 ease-in-out ${
+          isLoading
+            ? "scale-105 blur-xl grayscale"
+            : "scale-100 blur-0 grayscale-0"
         }`}
         loading="lazy"
         src={src}
@@ -45,23 +24,14 @@ function RoundedImage({ alt, src, ...props }: { alt: string; src: string }) {
   );
 }
 
-function Callout({
-  emoji,
-  children,
-}: {
-  emoji: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="flex rounded-lg bg-gray-200 p-4 dark:bg-gray-800">
-      <div className="mr-4 flex w-4 items-center">{emoji}</div>
-      <div className="callout w-full">{children}</div>
-    </div>
-  );
-}
-
 export default {
-  Image: RoundedImage,
-  a: CustomLink,
-  Callout,
+  Image,
+  a: ({ href, ...props }: { href: string }) =>
+    href.startsWith("http") ? (
+      <a href={href} rel="noopener noreferrer" target="_blank" {...props} />
+    ) : (
+      <NextLink passHref href={href}>
+        <a {...props} />
+      </NextLink>
+    ),
 };
