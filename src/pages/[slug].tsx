@@ -1,8 +1,8 @@
 import type { Post as IPost } from "contentlayer/generated";
 
 import { IoArrowBack } from "react-icons/io5";
+import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
-import Image from "next/image";
 import { NextSeo } from "next-seo";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -32,31 +32,23 @@ export default function Post({ post }: { post: IPost }) {
         <ThemeButton />
       </div>
       <article className="mx-auto mt-12 flex w-full max-w-2xl flex-col items-start justify-center">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
           {post.title}
         </h1>
-        <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
-          <div className="flex items-center">
-            <Link href="/">
-              <a className="flex items-center transition-all duration-300 ease-in-out hover:scale-110 active:scale-100">
-                <Image
-                  alt="Martin Sione"
-                  className="rounded-full"
-                  draggable="false"
-                  height={24}
-                  src="/img/avatar.jpg"
-                  width={24}
-                />
-              </a>
-            </Link>
-            <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              {"Martin Sione / "}
-              {format(parseISO(post.date), "MMMM dd, yyyy")}
-            </p>
-          </div>
-          <p className="min-w-32 mt-2 text-sm text-gray-600 dark:text-gray-400 md:mt-0">
-            {post.readingTime.text}
-          </p>
+        <div className="mt-2 flex w-full items-start space-x-2 text-sm text-gray-600 dark:text-gray-400">
+          <p>{format(parseISO(post.date), "MMMM dd, yyyy")}</p>
+          <span>&middot;</span>
+          <p>{post.readingTime.text}</p>
+          <span className="hidden sm:block">&middot;</span>
+          <a
+            className="hidden items-center gap-1 hover:text-gray-700 hover:underline hover:dark:text-gray-300 sm:flex"
+            href={`https://github.com/martinsione/martinsione.com/edit/main/data/blog/${post.slug}.mdx`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <p>Edit on github</p>
+            <FaGithub />
+          </a>
         </div>
         <div className="prose mt-4 w-full max-w-2xl dark:prose-dark">
           <Component components={MDXComponents} />

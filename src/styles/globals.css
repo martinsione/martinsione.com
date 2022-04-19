@@ -23,13 +23,11 @@ html {
 
 .prose .anchor {
   @apply invisible absolute cursor-pointer no-underline outline-none transition-all;
-  width: 80%;
-  max-width: 700px;
   margin-left: -1em;
   padding-right: 0.5em;
 }
 .prose .anchor:after {
-  @apply text-gray-300 dark:text-gray-600;
+  @apply text-gray-400 dark:text-gray-500;
   content: "#";
 }
 .prose *:hover > .anchor {
