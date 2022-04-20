@@ -28,12 +28,10 @@ function LinkIcon({
       rel="noopener noreferrer"
       target="_blank"
     >
-      <div className="rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 p-1 text-white transition-all duration-300 ease-out group-hover:shadow-lg group-hover:shadow-purple-500/50 sm:hover:scale-110 sm:active:scale-100">
+      <div className="rounded-lg bg-gradient-to-tl from-purple-500/80 to-rose-400/80 p-1 text-white transition-all duration-300 ease-out group-hover:shadow-lg group-hover:shadow-purple-500/50 sm:group-active:scale-95">
         <Icon className="h-6 w-6 sm:h-5 sm:w-5" />
       </div>
-      <p className="sm:text-md text-sm group-hover:underline group-hover:underline-offset-1">
-        {label}
-      </p>
+      <p className="group-hover:active underlined text-sm">{label}</p>
     </a>
   );
 }

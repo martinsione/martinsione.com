@@ -11,7 +11,7 @@ function FooterLink({
 }) {
   return (
     <a
-      className="hover:text-rose-300 hover:underline hover:decoration-rose-300/30 hover:underline-offset-2 dark:hover:text-rose-200/90"
+      className="underlined font-medium text-gray-500 hover:text-rose-300 dark:hover:text-rose-200/90"
       href={href}
       rel="noopener noreferrer"
       target="_blank"
@@ -32,7 +32,7 @@ export default function Layout({ children }: Props) {
           {children}
         </main>
         <footer className="mb-8 mt-16 flex flex-col items-center justify-center space-y-4 sm:mt-36 sm:mb-24 sm:space-y-6">
-          <div className="space-x-6 font-medium text-gray-500">
+          <div className="space-x-6">
             <FooterLink href="https://github.com/martinsione">
               Github
             </FooterLink>
