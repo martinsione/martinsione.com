@@ -28,7 +28,7 @@ export const Post = defineDocumentType(() => ({
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
-    summary: { type: "string", required: true },
+    description: { type: "string", required: true },
     date: { type: "string", required: true },
     // image: { type: "string", required: true },
   },
@@ -43,7 +43,8 @@ export default makeSource({
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
-      rehypePrism,
+      [rehypePrism, { showLineNumbers: true }],
+      // [rehypeAutolinkHeadings, { behavior: "wrap" }],
       [
         rehypeAutolinkHeadings,
         {

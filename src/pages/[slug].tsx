@@ -20,7 +20,7 @@ export default function Post({ post }: { post: IPost }) {
       <NextSeo
         {...seo}
         canonical={`https://martinsione.com/${post.slug}`}
-        description={post.summary}
+        description={post.description}
         title={`${post.title} - Martin Sione`}
       />
       <div className="flex items-center justify-between sm:mt-12">

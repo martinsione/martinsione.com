@@ -5,10 +5,10 @@ import { parseISO, format } from "date-fns";
 
 export default function BlogPost({
   title,
-  summary,
+  description,
   slug,
   date,
-}: Pick<IPost, "title" | "summary" | "slug" | "date">) {
+}: Pick<IPost, "title" | "description" | "slug" | "date">) {
   return (
     <div className="flex flex-col space-y-1">
       <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -19,7 +19,7 @@ export default function BlogPost({
           <h4 className="w-full font-medium text-gray-900 dark:text-gray-100 md:text-lg">
             {title}
           </h4>
-          <p className="text-gray-600 dark:text-gray-300">{summary}</p>
+          <p className="text-gray-600 dark:text-gray-300">{description}</p>
         </a>
       </Link>
     </div>

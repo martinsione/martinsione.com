@@ -14,7 +14,7 @@ async function generate() {
   allPosts
     .map((post) => ({
       title: post.title,
-      description: post.summary,
+      description: post.description,
       url: `https://martinsione.com/${post.slug}`,
       date: post.date,
     }))

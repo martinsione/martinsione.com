@@ -152,7 +152,7 @@ export default function Home({
 
 export function getStaticProps() {
   const posts = allPosts
-    .map((post) => pick(post, ["slug", "title", "summary", "date"]))
+    .map((post) => pick(post, ["slug", "title", "description", "date"]))
     .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
 
   return { props: { posts } };
