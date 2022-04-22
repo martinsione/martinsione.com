@@ -56,11 +56,14 @@ export default function Home({
               <h1 className="mb-1 text-3xl font-bold tracking-tight md:text-5xl">
                 Martin Sione
               </h1>
-              <h2 className="mb-4 text-gray-700 dark:text-gray-200">
+              <h2 className="text-gray-700 dark:text-gray-200 sm:mb-4">
                 Frontend developer based in{" "}
                 <strong className="font-medium">Parana, Argentina</strong>
               </h2>
-              <p className="prose hidden text-sm dark:text-gray-300 sm:block md:text-base">
+              <p
+                aria-hidden="true"
+                className="prose hidden text-sm dark:text-gray-300 sm:block md:text-base"
+              >
                 {seo.description}
               </p>
             </div>
